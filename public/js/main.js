@@ -85,12 +85,12 @@ if (selectedTheme) {
     svgGradient.children[2].setAttribute('stop-color', 'rgba(255, 255, 255, 1)');
     svgGradient.children[1].setAttribute('stop-color', 'rgba(255, 255, 255, 0.5)');
     svgGradient.children[0].setAttribute('stop-color', 'rgba(0, 0, 0, 0)');
-    logoNav.src = "assets/images/simbolo_poesista_gray.svg";
+    logoNav.src = "public/assets/images/simbolo_poesista_gray.svg";
   } else {
     svgGradient.children[2].setAttribute('stop-color', 'rgba(143, 122, 91, 0.8)');
     svgGradient.children[1].setAttribute('stop-color', 'rgba(143, 122, 91, 0.5)');
     svgGradient.children[0].setAttribute('stop-color', 'rgba(255, 255, 255, 0)');
-    logoNav.src = "assets/images/simbolo_poesista.svg";
+    logoNav.src = "public/assets/images/simbolo_poesista.svg";
   }
 }
 
@@ -105,12 +105,12 @@ themeButton.addEventListener('click', () => {
     svgGradient.children[2].setAttribute('stop-color', 'rgba(255, 255, 255, 1)');
     svgGradient.children[1].setAttribute('stop-color', 'rgba(255, 255, 255, 0.5)');
     svgGradient.children[0].setAttribute('stop-color', 'rgba(0, 0, 0, 0)');
-    logoNav.src = "assets/images/simbolo_poesista_gray.svg";
+    logoNav.src = "public/assets/images/simbolo_poesista_gray.svg";
   } else {
     svgGradient.children[2].setAttribute('stop-color', 'rgba(143, 122, 91, 0.8)');
     svgGradient.children[1].setAttribute('stop-color', 'rgba(143, 122, 91, 0.5)');
     svgGradient.children[0].setAttribute('stop-color', 'rgba(255, 255, 255, 0)');
-    logoNav.src = "assets/images/simbolo_poesista.svg";
+    logoNav.src = "public/assets/images/simbolo_poesista.svg";
   }
   // We save the theme and the current icon that the user chose
   localStorage.setItem('selected-theme', getCurrentTheme());

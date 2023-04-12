@@ -43,7 +43,7 @@
                 <i class='bx bx-grid-alt'></i>
             </div>
 
-            <a href="#" class="button button__header open-modal">Únetenos</a>
+            <a href="#" class="button button__header open-modal">Cuestionate</a>
         </nav>
     </header>
 
@@ -335,19 +335,22 @@
         </div>
 
         <div id="modal" class="modal">
-
             <div class="modal-content">
                 <a href="#" id="close-modal" class="close-icon"><i class="material-icons">close</i></a>
                 <img href="#" src="public/assets/images/simbolo_poesista.svg" alt="" width="150px">
-                <h2>¿De qué se trata?</h2>
-                <p id="countdown"></p>
-                <p class="message-modal">Proponemos un nuevo modo de vida en reconocimiento <br>
-                    a toda la cadena de interdependencia en el planeta, un modo de vida que contempla la complejidad de
-                    todas las especies</p>
-                <a href="#contact" id="button-modal" class="button button-flex">
-                    Quiero saber más
-                </a>
+                <h2>PREGUNTA SEMANAL</h2>
+                <!-- <p id="countdown"></p> -->
+                <form id="weekly-question-form"
+                    action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSd_NLDI7pHiKC8yOYCZXnEUH-8CJA_vPz9m_c957YUrJti3qg/formResponse">
+                    <div class="form-group">
+                        <label id="question-label" for="answer"></label>
+                        <textarea class="input2" placeholder="Danos tu opinión..." id="answer" name="entry.400511360"
+                            rows="5" required></textarea>
+                    </div>
 
+
+                    <input type="submit" id="button-modal" class="button button-flex" value="Responder">
+                </form>
             </div>
         </div>
 
@@ -376,9 +379,6 @@
                         experiencia humana.
                     </p>
                     <div class="app__buttons">
-                        <a href="#" class="button button-flex open-modal">
-                            <i class='bx bx-color button__icon'></i> Nuestro contenido
-                        </a>
                         <a href="#" class="open-modal button button-flex">
                             <i class='bx bxs-hand button__icon'></i> Nuestra propuesta
                         </a>
@@ -723,7 +723,7 @@
                 <ul class="footer__links">
                     <!-- <li><a href="#" class="footer__link">Pricing </a></li>
                     <li><a href="#" class="footer__link">Discounts</a></li> -->
-                    <!-- <li><a href="#" class="footer__link">Política de privacidad</a></li>
+            <!-- <li><a href="#" class="footer__link">Política de privacidad</a></li>
                     <li><a href="#" class="footer__link">Términos de servicio</a></li>
                 </ul>
             </div> -->
@@ -766,9 +766,11 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="public/js/main.js"></script>
+    <script src="public/js/modal.js"></script>
     <script>
         window.addEventListener("load", function () {
             const form = document.getElementById('my-form');
+            const form_question = document.getElementById('weekly-question-form');
             form.action = "https://script.google.com/macros/s/AKfycbxCheV_XWfVXxvEc6XPLkfvXin1i0SArAmAhn0OvRiU2v984OzQf6--shSDRiD1dfJw6g/exec";
             form.addEventListener("submit", function (evento) {
                 evento.preventDefault(); // Evita que se envíe el formulario
@@ -829,6 +831,32 @@
                         }, 2000);
                     });
             });
+            form_question.addEventListener("submit", function (evento) {
+                evento.preventDefault();
+
+                const modal = document.getElementById("myModal");
+                const loader = document.querySelector(".loader");
+                const loadingText = document.querySelector(".loading-text");
+                const successText = document.querySelector(".success-text");
+                const success = document.getElementById("success-modal");
+
+                // Mostrar el modal y el loader
+                modal.style.display = "block";
+                loadingText.style.display = "none";
+                successText.style.display = "block";
+                success.style.display = "block";
+                loader.style.display = "none";
+
+                // loader.style.display = "none";
+                setTimeout(() => {
+                    // Cerrar el modal después de 2 segundos
+
+                    modal.style.display = "none";
+                    successText.style.display = "block";
+                    // Resetear el formulario
+                    form.reset();
+                }, 1000);
+            })
         });
     </script>
 
