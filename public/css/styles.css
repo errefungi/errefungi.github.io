@@ -215,6 +215,7 @@ img {
 .modal-content h2 {
   color: hsl(var(--hue), 4%, 15%);
 }
+
 #question-label {
   font-size: 1.2rem;
   font-weight: bold;
@@ -264,7 +265,7 @@ img {
   margin-bottom: 1rem;
 }
 
-#weekly-question-form{
+#weekly-question-form {
   width: 100%;
 }
 
@@ -417,7 +418,8 @@ body.dark-theme {
 }
 
 .svg__img {
-  width: 300px;
+  width: 512px;
+  height: 512px;
   justify-self: center;
 }
 
@@ -463,25 +465,34 @@ body.dark-theme {
   width: 100%;
 } */
 
+
+
 .background_image {
+  display: block;
   opacity: 0.3;
-  width: 100%;
+  width: 80%;
   height: auto;
   position: absolute;
   z-index: -1;
-  transform: translate(550px, -450px) rotate(-45deg);
+  transform: rotate(-45deg);
+  left:0;
+  top:0;
 }
 
 .background_image2 {
+  display: none;
   opacity: 0.3;
   width: 120%;
   height: auto;
   position: absolute;
   z-index: -1;
   transform: translate(-950px, 1250px) rotate(135deg);
+  left: 0;
+  top: 0;
 }
 
 .background_image3 {
+  display: none;
   opacity: 0.3;
   width: 80%;
   height: auto;
@@ -561,8 +572,8 @@ body.dark-theme {
 
 .my-image {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   /* Asegura que la imagen cubra todo el espacio del contenedor, recortando si es necesario */
   position: center;
@@ -1024,39 +1035,10 @@ body.dark-theme {
   max-height: 480px;
 }
 
-.app__views img {
-  width: 40%;
-  height: auto;
-  position: relative;
-  transition: .3s;
-}
 
 
-.app__views img:nth-child(1) {
-  left: 15%;
-}
 
-.app__views img:nth-child(2) {
-  z-index: 1;
-  width: 45%;
-  height: auto;
-}
 
-.app__views img:nth-child(3) {
-  right: 15%;
-}
-
-/* .app__views:hover> :not(:hover) {
-  width: 40%;
-  opacity: .3;
-  z-index: 0;
-  transition: opacity 0.2s ease-in-out;
-} */
-
-/* .app__views img:hover{
-  width: 45%;
-  z-index: 1;
-} */
 
 
 .blob1 {
@@ -1480,6 +1462,7 @@ option {
   .app__buttons {
     grid-template-columns: max-content;
   }
+
 }
 
 /* For medium devices */
@@ -1618,6 +1601,26 @@ option {
 
 /* For large devices */
 @media screen and (min-width: 968px) {
+
+
+
+  .background_image {
+    display: block;
+    transform: translate(550px, -450px) rotate(-45deg);
+    width: 100%;
+
+  }
+
+  .background_image2 {
+    display: block;
+
+  }
+
+  .background_image3 {
+    display: block;
+
+  }
+
   .button__header {
     display: block;
   }
@@ -1630,6 +1633,8 @@ option {
   }
 
   .video-frame {
+    width: 560px;
+    height: 315px;
     border: 1px solid #8F7A5B;
     /* Cambie el color y el grosor del borde según sus preferencias */
     border-radius: 5%;
