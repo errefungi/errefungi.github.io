@@ -501,6 +501,8 @@ body.dark-theme {
   transform: translate(950px, 2850px) rotate(135deg);
 }
 
+
+
 /*=============== HEADER ===============*/
 .header {
   width: 100%;
@@ -680,6 +682,7 @@ body.dark-theme {
 
 
 /*=============== BUTTONS ===============*/
+
 .button {
   display: inline-block;
   background: linear-gradient(to right, #BB2D2D, #dc4646);
@@ -695,7 +698,7 @@ body.dark-theme {
 }
 
 .button__header {
-  display: none;
+  display: block;
 }
 
 .button-link {
@@ -719,6 +722,9 @@ body.dark-theme {
   font-size: 1.5rem;
 }
 
+.nuestra-propuesta{
+  display: none;
+}
 /*=============== CARD VIEW ===============*/
 
 .card {
@@ -1622,6 +1628,9 @@ option {
   }
 
   .button__header {
+    display: block;
+  }
+  .nuestra-propuesta{
     display: block;
   }
 

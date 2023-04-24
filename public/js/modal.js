@@ -1,20 +1,13 @@
 //MODAL PARA OBTENER LAS RESPUESTAS
 const questions = [
-    "¿Qué crees que crees?",
-    "¿Cuáles son los pilares de tu cultura?",
-    "¿Por qué crees lo que crees?",
-    "¿Cuál es la importancia del autoconocimiento?",
-    "¿Qué valores consideras fundamentales en tu vida?",
-    "¿Qué te hace sentir más conectado con los demás?",
-    "¿Qué te motiva a seguir aprendiendo y creciendo?",
-    "¿Cómo influyen tus creencias en tus decisiones diarias?",
-    "¿Cuál es el papel del arte y la creatividad en tu vida?",
-    "¿Cómo te gustaría contribuir al mundo?",
-    "¿Cuál es tu filosofía de vida?",
-    "¿Qué aspectos de tu vida te gustaría mejorar?",
-    "¿Cómo te relacionas con la naturaleza y el medio ambiente?",
-    "¿Cómo te enfrentas a los desafíos y obstáculos en tu vida?",
-    "¿Qué te inspira a ser una mejor persona?",
+    ["¿Qué crees que crees?", "entry.400511360"],
+    ["¿Por qué crees lo que crees?", "entry.727744548"],
+    ["¿Qué valores consideras fundamentales en tu vida?", "entry.687311374"],
+    ["¿Qué te motiva a seguir aprendiendo y creciendo?", "entry.1065397444"],
+    ["¿Cómo te gustaría contribuir al mundo en 3 palabras?", "entry.1131274132"],
+    ["¿Cuál es tu filosofía de vida en 3 palabras?", "entry.1974077437"],
+    ["¿Cómo te relacionas con la naturaleza y el medio ambiente?", "entry.188638610"],
+    ["¿Qué te inspira a ser una mejor persona?", "entry.2079223886"],
 ];
 
 
@@ -31,8 +24,12 @@ function getWeeklyQuestion() {
 }
 document.addEventListener("DOMContentLoaded", () => {
     const questionLabel = document.getElementById("question-label");
+    // Selecciona el elemento textarea por su ID
+    const textareaName = document.getElementById("answer-weekly");
     const weeklyQuestion = getWeeklyQuestion();
-    questionLabel.textContent = weeklyQuestion;
+    questionLabel.textContent = weeklyQuestion[0];
+    // Cambia el atributo "name" del elemento textarea
+    textareaName.setAttribute("name", weeklyQuestion[1]);
 });
 
 function updateCountdown() {
