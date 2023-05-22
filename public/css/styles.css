@@ -265,6 +265,10 @@ img {
   margin-bottom: 1rem;
 }
 
+label{
+  color: #ffffff;
+}
+
 #weekly-question-form {
   width: 100%;
 }
@@ -692,6 +696,16 @@ body.dark-theme {
   font-weight: var(--font-semi-bold);
   transition: .3s;
 }
+.button2 {
+  display: inline-block;
+  background: linear-gradient(to right, #367230, #5ca255);
+  color: #FFFFFF;
+  padding: .75rem 1.5rem;
+  border-radius: 3rem;
+  font-weight: var(--font-semi-bold);
+  transition: .3s;
+}
+
 
 .button:hover {
   background: var(--first-color-alt);

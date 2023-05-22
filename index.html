@@ -344,8 +344,8 @@
                     action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSd_NLDI7pHiKC8yOYCZXnEUH-8CJA_vPz9m_c957YUrJti3qg/formResponse">
                     <div class="form-group">
                         <label id="question-label" for="answer"></label>
-                        <textarea class="input2" placeholder="Danos tu opinión..." id="answer-weekly" name=""
-                            rows="5" required></textarea>
+                        <textarea class="input2" placeholder="Danos tu opinión..." id="answer-weekly" name="" rows="5"
+                            required></textarea>
                     </div>
 
 
@@ -381,7 +381,12 @@
                         <a href="#" class="open-modal button button-flex nuestra-propuesta">
                             <i class='bx bxs-hand button__icon'></i> Nuestra propuesta
                         </a>
+                        <a href="https://chat.whatsapp.com/F0IbiKTlStX4CMMIKMszZk" target="_blank"
+                            class="button2 button button-flex nuestra-propuesta">
+                            <i class='bx bxs-universal-access button__icon'></i> Únetenos
+                        </a>
                     </div>
+
 
 
                 </div>
@@ -520,8 +525,8 @@
 
                 </div>
                 <div class="app__views  ">
-                    <iframe src="" title="YouTube video player" frameborder="0"
-                        class="move-from-right video-frame" id="video_aleatorio"
+                    <iframe src="" title="YouTube video player" frameborder="0" class="move-from-right video-frame"
+                        id="video_aleatorio"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
@@ -650,14 +655,6 @@
                         todas, un cambio que parte del conocimiento absoluto del ser, del control de las emociones y las
                         pulsiones.
                     </p>
-                    <!-- <div class="app__buttons">
-                        <a href="#" class="button button-flex open-modal">
-                            <i class='bx bxl-apple button__icon'></i> App Store
-                        </a>
-                        <a href="#" class="button button-flex open-modal">
-                            <i class='bx bxl-play-store button__icon'></i> Google Play
-                        </a>
-                    </div> -->
                 </div>
 
 
@@ -667,39 +664,27 @@
 
         <!--=============== CONTACT US ===============-->
         <section class="contact section container" id="contact">
-            <form id="my-form" method="post">
+            <form name='submit-to-google-sheet' id="my-form">
                 <div class="contact__container grid">
                     <div class="contact__content">
                         <h2 class="section__title-center">
-                            Contáctanos<br>ahora
+                            Comparte con<br>nosotros
                         </h2>
-                        <p class="contact__description">Suscribete al buzon de Poesismo.</p>
+                        <p class="contact__description">Compartamos ideas.</p>
                         <div class="container__input">
-                            <input type="text" id="nombre" name="nombre" placeholder="Nombres" class="name input">
-                            <input type="text" id="apellido" name="apellido" placeholder="Apellidos"
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre(s)" class="name input">
+                            <input type="text" id="apellido" name="ig-user" placeholder="Usuario de instagram"
                                 class="lastname input">
                         </div>
                         <input type="email" name="email" placeholder="Ingresa tu correo" class="email input" id="email">
-                        <textarea class="input" placeholder="Cuéntanos de ti..." id="answer" name="mensaje" rows="3"
+                        <input type="radio" name="tipo-consulta" value="consulta"><label> Consulta</label>
+                        <input type="radio" name="tipo-consulta" value="escrito"><label> Escrito</label>
+                        <textarea class="input" placeholder="Mandanos tu escrito..." id="answer" name="mensaje" rows="3"
                             required></textarea>
 
                     </div>
-                    <!-- <ul class="contact__content grid">
-                        <li class="contact__address">Teléfono: <span class="contact__information">8131128625</span>
-                        </li>
-                        <li class="contact__address">Email: <span class="contact__information">nejouser@gmail.com</span>
-                        </li>
-                        <li class="contact__address">1° Ubicación: <span class="contact__information">Monterrey -
-                                México</span>
-                        </li>
-                        <li class="contact__address">2° Ubicación: <span class="contact__information">Colombia</span>
-                        </li>
-
-                    </ul> -->
-
                     <div class="contact__content">
-                        <button type="submit" class="button">Enviar</button>
-
+                        <input type="submit" name='submit' class="button">
                     </div>
                 </div>
             </form>
@@ -713,17 +698,6 @@
                 <a href="#" class="footer__logo">Poesismo</a>
                 <p class="footer__description">Ayúdanos a difundir nuestra idea<br>Sé parte del cambio</p>
             </div>
-
-            <!-- <div class="footer__content">
-                <h3 class="footer__title">Servicos</h3>
-                <ul class="footer__links">
-                    <!-- <li><a href="#" class="footer__link">Pricing </a></li>
-                    <li><a href="#" class="footer__link">Discounts</a></li> -->
-            <!-- <li><a href="#" class="footer__link">Política de privacidad</a></li>
-                    <li><a href="#" class="footer__link">Términos de servicio</a></li>
-                </ul>
-            </div> -->
-
             <div class="footer__content">
                 <h3 class="footer__title">Nosotros</h3>
                 <ul class="footer__links">
@@ -765,68 +739,7 @@
     <script src="public/js/modal.js"></script>
     <script>
         window.addEventListener("load", function () {
-            const form = document.getElementById('my-form');
             const form_question = document.getElementById('weekly-question-form');
-            form.action = "https://script.google.com/macros/s/AKfycbxCheV_XWfVXxvEc6XPLkfvXin1i0SArAmAhn0OvRiU2v984OzQf6--shSDRiD1dfJw6g/exec";
-            form.addEventListener("submit", function (evento) {
-                evento.preventDefault(); // Evita que se envíe el formulario
-
-                const nombre = document.getElementById('nombre').value;
-                const apellido = document.getElementById('apellido').value;
-                const email = document.getElementById('email').value;
-
-                if (nombre === '' || email === '' || apellido === '') {
-                    alert('Por favor, completa todos los campos'); // Muestra un mensaje de error
-                    return;
-                }
-
-                // Obtener el modal y los elementos de texto
-                const modal = document.getElementById("myModal");
-                const loader = document.querySelector(".loader");
-                const loadingText = document.querySelector(".loading-text");
-                const successText = document.querySelector(".success-text");
-                const success = document.getElementById("success-modal");
-
-                // Mostrar el modal y el loader
-                modal.style.display = "block";
-                loadingText.style.display = "block";
-                successText.style.display = "none";
-                success.style.display = "none";
-
-
-                const data = new FormData(form);
-                const action = evento.target.action;
-
-                fetch(action, {
-                    method: 'POST',
-                    body: data,
-                })
-                    .then(() => {
-                        // Ocultar el loader y mostrar el mensaje de éxito
-                        loadingText.style.display = "none";
-                        successText.style.display = "block";
-                        success.style.display = "block";
-
-                        loader.style.display = "none";
-                        setTimeout(() => {
-                            // Cerrar el modal después de 2 segundos
-                            modal.style.display = "none";
-                            successText.style.display = "block";
-                            // Resetear el formulario
-                            form.reset();
-                        }, 2000);
-                    })
-                    .catch(() => {
-                        // En caso de error, ocultar el loader y mostrar un mensaje de error
-                        loadingText.style.display = "none";
-                        const errorText = document.querySelector(".error-text");
-                        errorText.style.display = "block";
-                        setTimeout(() => {
-                            // Ocultar el mensaje de error después de 2 segundos
-                            errorText.style.display = "none";
-                        }, 2000);
-                    });
-            });
             form_question.addEventListener("submit", function (evento) {
                 // evento.preventDefault();
 
@@ -854,6 +767,51 @@
                 }, 1000);
             })
         });
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzVC7-9HPHxxuezvgqbXTQiQZTQeFQDV_8mjFyLHu6yfiP_Zp0NzP2Pa5nu7S1Hz0Tl/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            const modal = document.getElementById("myModal");
+            const loader = document.querySelector(".loader");
+            const loadingText = document.querySelector(".loading-text");
+            const successText = document.querySelector(".success-text");
+            const success = document.getElementById("success-modal");
+
+            // Mostrar el modal y el loader
+            modal.style.display = "block";
+            loadingText.style.display = "block";
+            successText.style.display = "none";
+            success.style.display = "none";
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(() => {
+                    // Ocultar el loader y mostrar el mensaje de éxito
+                    loadingText.style.display = "none";
+                    successText.style.display = "block";
+                    success.style.display = "block";
+
+                    loader.style.display = "none";
+                    setTimeout(() => {
+                        // Cerrar el modal después de 2 segundos
+                        modal.style.display = "none";
+                        successText.style.display = "block";
+                        // Resetear el formulario
+                        form.reset();
+                    }, 2000);
+                })
+                .catch(() => {
+                    // En caso de error, ocultar el loader y mostrar un mensaje de error
+                    loadingText.style.display = "none";
+                    const errorText = document.querySelector(".error-text");
+                    errorText.style.display = "block";
+                    setTimeout(() => {
+                        // Ocultar el mensaje de error después de 2 segundos
+                        errorText.style.display = "none";
+                    }, 2000);
+                });
+        })
     </script>
 
 
